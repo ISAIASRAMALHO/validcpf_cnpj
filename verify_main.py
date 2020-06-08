@@ -7,7 +7,7 @@ def cpf(dv):
   s_s, s_s2  = 0, 0
   resto1, resto2 = 0, 0
   dvf1, dvf2 = 0, 0
-  # PRIMEIRA FORMULA
+  # CALCULANDO PRIMEIRO DIGITO VERIFICADOR
   for s in range(0,9):
     ls_dv1.append( int( l_dv[s] ) * lc_dv1[s] )
     s_s +=ls_dv1[s]
@@ -16,7 +16,7 @@ def cpf(dv):
   if dvf1 > 9:
     dvf1 = 0
  
-  # SEGUNDA FORMULA
+  # CALCULANDO SEGUNDO DIGITO VERIFICADOR
   for s2 in range(0, 9):
     ls_dv2.append(  int( l_dv[s2] ) * lc_dv2[s2] )
     s_s2 += ls_dv2[s2]
@@ -37,17 +37,16 @@ def cnpj( dv ):
   m2 = [6,5,4,3,2,9,8,7,6,5,4,3,2]
   n1, n2, q1, q2 = 0, 0, 0, 0
   dvf1, dvf2 = 0, 0
-  # PRIMEIRA FORMULA
+  # CALCULANDO PRIMEIRO DIGITO VERIFICADOR
   for s in range(0,12):
     n1 += int(l_dv[s]) * m[s]
-    print(s)
   q1 = n1 % 11
   if q1 < 2:
     dvf1 = 0
   else:
     dvf1 = 11 - q1
   
-  # SEGUNDA FORMULA
+  # CALCULANDO SEGUNDO DIGITO VERIFICADOR
   for s2 in range(0,12):
     n2 += int( l_dv[s2]) * m2[s2] 
  
